@@ -8,3 +8,15 @@
 - Jenkins cicd pipleline 구축을 위한 프로젝트
   - tobuild
 
+## 3. pipeline
+
+| 구성 요소       | Host Port | Container(Inner) Port | 설명                      |
+| ----------- | --------- | --------------------- | ----------------------- |
+| Jenkins     | 8080      | 8080                  | CI/CD 서버                |
+| Application | 8090      | (내부 실행 포트)            | Spring Boot 등 애플리케이션    |
+
+```scss
+Git Push → Webhook → Jenkins Trigger
+        → Git Fetch & Checkout (master)
+        → Build (Jar/War 생성)
+```
